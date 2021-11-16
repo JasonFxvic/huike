@@ -2,9 +2,10 @@ package rcsinterface
 
 import (
 	"fmt"
-	httputils "huike/httpUtils"
 	"net/http"
 	"strings"
+
+	httputils "github.com/JasonFxvic/huike/httpUtils"
 )
 
 var BaseUrl string = "http://10.22.224.141:6546/"

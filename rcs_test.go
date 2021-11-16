@@ -1,8 +1,9 @@
 package func_test
 
 import (
-	rcsinterface "huike/rcsInterface"
 	"testing"
+
+	rcsinterface "github.com/JasonFxvic/huike/rcsInterface"
 )
 
 // var param map[string]string
