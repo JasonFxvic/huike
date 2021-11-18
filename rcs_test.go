@@ -41,11 +41,11 @@ func TestUpdateAgvAttr(t *testing.T) {
 func TestCreateOrder(t *testing.T) {
 	t.Log("测试==>创建指令")
 	param := make(map[string]interface{})
-	param["id"] = "T2102011365639"
+	param["id"] = "T2102011365649"
 	param["systemId"] = "WMS"
-	param["type"] = "LoadingAndUnloading"
-	param["source"] = "100"
-	param["destination"] = "126"
+	param["type"] = "TravelToPosture "
+	param["source"] = "103"
+	param["destination"] = "118"
 	rcsinterface.CreateOrder(param)
 }
 

@@ -14,7 +14,6 @@ var BaseUrl string = "http://10.22.224.141:6546/"
 func GetAgvMessage(id string) (response string, err error) {
 	targetUrl := BaseUrl + "api/v2/agvs/" + id
 	resp, _ := httputils.CurlWithParam(targetUrl, "get", nil)
-	fmt.Print(resp)
 	return resp, nil
 }
 
@@ -22,7 +21,6 @@ func GetAgvMessage(id string) (response string, err error) {
 func GetAllAgvMessage() (response string, err error) {
 	targetUrl := BaseUrl + "api/v2/agvs"
 	resp, _ := httputils.CurlWithParam(targetUrl, "get", nil)
-	fmt.Print(resp)
 	return resp, nil
 }
 
@@ -30,7 +28,6 @@ func GetAllAgvMessage() (response string, err error) {
 func GetAgvOrders(id string) (response string, err error) {
 	targetUrl := BaseUrl + "api/v2/agvs/" + id + "/orders"
 	resp, _ := httputils.CurlWithParam(targetUrl, "get", nil)
-	fmt.Print(resp)
 	return resp, nil
 }
 
@@ -46,6 +43,7 @@ func UpdateAgvAttr(id string, data string) {
 		return
 	}
 	fmt.Print(response)
+	fmt.Print("修改车辆参数成功")
 }
 
 // 创建指令
@@ -53,13 +51,13 @@ func CreateOrder(data interface{}) {
 	targetUrl := BaseUrl + "api/v2/orders"
 	content := httputils.Post(targetUrl, data, "application/json")
 	fmt.Print(content)
+	fmt.Print("创建指令成功")
 }
 
 //按照id查询指令
 func GetOrderById(id string) (response string, err error) {
 	targetUrl := BaseUrl + "api/v2/orders/" + id
 	resp, _ := httputils.CurlWithParam(targetUrl, "get", nil)
-	fmt.Print(resp)
 	return resp, nil
 }
 
@@ -67,7 +65,6 @@ func GetOrderById(id string) (response string, err error) {
 func GetOrdersById(ids string) (response string, err error) {
 	targetUrl := BaseUrl + "api/v2/orders?range=" + ids
 	resp, _ := httputils.CurlWithParam(targetUrl, "get", nil)
-	fmt.Print(resp)
 	return resp, nil
 }
 
@@ -76,13 +73,13 @@ func UpdateOrder(data interface{}) {
 	targetUrl := BaseUrl + "api/v2/orderModifications"
 	content := httputils.Post(targetUrl, data, "application/json")
 	fmt.Print(content)
+	fmt.Print("指令修改成功")
 }
 
 //按照id查询指令修改
 func GetUpdateOrderById(id string) (response string, err error) {
 	targetUrl := BaseUrl + "api/v2/orderModifications?id=" + id
 	resp, _ := httputils.CurlWithParam(targetUrl, "get", nil)
-	fmt.Print(resp)
 	return resp, nil
 }
 
@@ -90,7 +87,6 @@ func GetUpdateOrderById(id string) (response string, err error) {
 func SysErrorsMessage() (response string, err error) {
 	targetUrl := BaseUrl + "api/v2/errors"
 	resp, _ := httputils.CurlWithParam(targetUrl, "get", nil)
-	fmt.Print(resp)
 	return resp, nil
 }
 
@@ -98,6 +94,5 @@ func SysErrorsMessage() (response string, err error) {
 func TaskParameters() (response string, err error) {
 	targetUrl := BaseUrl + "api/v2/taskParameters"
 	resp, _ := httputils.CurlWithParam(targetUrl, "get", nil)
-	fmt.Print(resp)
 	return resp, nil
 }
